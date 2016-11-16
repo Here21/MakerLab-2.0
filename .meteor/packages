@@ -24,3 +24,4 @@ webpack:react
 webpack:less
 webpack:css
 react-meteor-data
+kadira:flow-router
