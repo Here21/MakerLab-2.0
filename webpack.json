@@ -1,0 +1,8 @@
+{
+  "root": ".",
+  "devtool": "source-map",
+  "devServer": {
+    "host": "localhost"
+  },
+  "devtool": "source-map"
+}
