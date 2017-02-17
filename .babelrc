@@ -1,2 +1,16 @@
 {
+  "presets": [ "es2015", "stage-0" ],
+  "plugins": [
+    ["import", [
+      {
+        "libraryName": "antd-mobile",
+        "style": true
+      }
+    ]],
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+
+  ]
 }

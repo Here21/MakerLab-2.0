@@ -1,19 +1,24 @@
-import initContext from './configs/context';
-import App from 'client/lib/app';
+import 'babel-polyfill'
 
-// modules
-import coreModule from './modules/core';
-// import commentsModule from './modules/comments';
+import React from 'react'
+import { Meteor } from 'meteor/meteor';
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import routers from '../imports/startup/client/routers'
+// import App from '../imports/ui/containers/App'
+import configure from '../imports/startup/client/store'
+import sagas from '../imports/startup/client/sagas/index'
 
-// init context
-const context = initContext();
-const app = new App(context);
+const store = configure()
+store.runSaga(sagas)
 
-
-// create app
-// const app = createApp(context);
-app.loadModule(coreModule);
-// app.loadModule(commentsModule);
-
-app.init();
-FlowRouter.initialize();
+Meteor.startup(() => {
+  render(
+    <Provider store={store}>
+      {
+        routers
+      }
+    </Provider>,
+    document.getElementById('app')
+  );
+});
