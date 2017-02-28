@@ -2,15 +2,4 @@
   width: 1rem;
   height: 0.4rem;
   font-size: 12px;
-
-  button {
-    width: 10rem;
-    background-color: aqua;
-  }
-}
-[data-dpr="2"] div {
-  font-size: 24px;
-}
-[data-dpr="3"] div {
-  font-size: 36px;
 }
