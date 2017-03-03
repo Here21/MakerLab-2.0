@@ -46,9 +46,3 @@ header .logo {
   line-height: 2rem;
   margin-top: 1rem;
 }
-
-.about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
