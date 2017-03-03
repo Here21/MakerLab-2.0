@@ -1,18 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router'
 import './style.css'
 
 const NavBar = () => (
   <header id="header">
     <div className="inner">
-      <a href="/" className="logo">Theory</a>
+      <Link to="/" className="logo">MakerLab</Link>
       <div className="login-panel">
         登录
       </div>
       <nav id="nav">
-        <a href="#">主页</a>
-        <a href="#">实验室</a>
-        <a href="#">课程</a>
-        <a href="#">项目</a>
+        <Link to="/">主页</Link>
+        <Link to="lab">实验室</Link>
+        <Link to="course">课程</Link>
+        <Link to="project">项目</Link>
       </nav>
     </div>
   </header>

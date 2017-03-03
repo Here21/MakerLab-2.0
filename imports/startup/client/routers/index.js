@@ -1,7 +1,11 @@
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import React from 'react'
 
-import Index from '../../../ui/containers/App';
+import Index from '../../../ui/containers/App'
+import Home from '../../../ui/containers/App/Home'
+import Lab from '../../../ui/containers/App/Lab'
+import Course from '../../../ui/containers/App/Course'
+import Project from '../../../ui/containers/App/Project'
 
 // const chooseComponent = (location, cb) => {
 //   require.ensure([], require => {
@@ -12,8 +16,11 @@ import Index from '../../../ui/containers/App';
 const RouteConfig = (
   <Router history={browserHistory}>
     <Route path="/" component={Index}>
-      <IndexRoute component={Index} />
-      <Route path="index" component={Index} />
+      <IndexRoute component={Home} />
+      <Route path="/" component={Home} />
+      <Route path="lab" component={Lab} />
+      <Route path="course" component={Course} />
+      <Route path="project" component={Project} />
     </Route>
   </Router>
 );

@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as actions from '../../../startup/client/actions/todo'
 import NavBar from '../../components/NavBar'
+import FooterBar from '../../components/FooterBar'
 import './style.css'
 
 @connect(
@@ -21,10 +22,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className={'test'}>
+      <div className="container">
         <NavBar />
-        Hello
-        <button onClick={::this.handleButton}>BUTTON</button>
+        { this.props.children }
+        <FooterBar />
       </div>
     )
   }
