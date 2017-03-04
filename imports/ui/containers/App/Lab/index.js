@@ -5,9 +5,15 @@ import './style.css';
 export default class Lab extends Component {
   render() {
     return (
-      <div>
-        <LabCard />
-          hi, this is laboratory
+      <div className="lab-page">
+        <div className="inner">
+          <LabCard />
+          <LabCard />
+          <LabCard />
+          <LabCard />
+          <LabCard />
+          <LabCard />
+        </div>
       </div>
     )
   }

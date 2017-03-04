@@ -5,7 +5,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 100;
-  background-color: #5B5B5B;
+  background-color: #3F3F3F;
   color: #FFF;
 }
 
@@ -34,7 +34,7 @@ header .logo {
   text-decoration: none;
   width: 4.5rem;
   text-align: center;
-  color: #FFF;
+  color: rgba(255, 255, 255, .5);
 }
 
 .login-panel {
@@ -45,4 +45,8 @@ header .logo {
   height: 2rem;
   line-height: 2rem;
   margin-top: 1rem;
+}
+
+#nav .active {
+  color: #FFF;
 }

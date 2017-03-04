@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import './style.css'
 
-const NavBar = () => (
+const NavBar = ({ pathname }) => (
   <header id="header">
     <div className="inner">
       <Link to="/" className="logo">MakerLab</Link>
@@ -10,10 +10,10 @@ const NavBar = () => (
         登录
       </div>
       <nav id="nav">
-        <Link to="/">主页</Link>
-        <Link to="lab">实验室</Link>
-        <Link to="course">课程</Link>
-        <Link to="project">项目</Link>
+        <Link to="home" className={pathname === 'home' ? 'active' : ''}>主页</Link>
+        <Link to="lab" className={pathname === 'lab' ? 'active' : ''}>实验室</Link>
+        <Link to="course" className={pathname === 'course' ? 'active' : ''}>课程</Link>
+        <Link to="project" className={pathname === 'project' ? 'active' : ''}>项目</Link>
       </nav>
     </div>
   </header>

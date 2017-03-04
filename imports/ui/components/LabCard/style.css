@@ -1,9 +1,9 @@
-.card-image {
+.lab-card-image {
   width: 393px;
   height: 208px;
 }
 
-.card-content {
+.lab-card-content {
   padding: 16px;
   width: 393px;
   height: 212px;
@@ -13,12 +13,21 @@
   align-items: center;
 }
 
-.avatar {
+.lab-card-content .avatar {
   width: 54px;
   height: 54px;
   border-radius: 50%;
 }
 
-.user-moto {
+.lab-card-content .user-feature {
+  width: 75%;
+  text-align: center;
+}
+
+.lab-card-content .user-introduce {
   color: #999;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

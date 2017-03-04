@@ -21,9 +21,11 @@ export default class App extends Component {
   }
 
   render() {
+    const { location } = this.props
+    console.log(location.pathname)
     return (
       <div className="container">
-        <NavBar />
+        <NavBar pathname={location.pathname} />
         { this.props.children }
         <FooterBar />
       </div>
