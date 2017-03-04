@@ -1,4 +1,4 @@
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Route, IndexRoute } from 'react-router'
 import React from 'react'
 
 import Index from '../../../ui/containers/App'
@@ -14,15 +14,13 @@ import Project from '../../../ui/containers/App/Project'
 // }
 
 const RouteConfig = (
-  <Router history={browserHistory}>
-    <Route path="/" component={Index}>
-      <IndexRoute component={Home} />
-      <Route path="/" component={Home} />
-      <Route path="lab" component={Lab} />
-      <Route path="course" component={Course} />
-      <Route path="project" component={Project} />
-    </Route>
-  </Router>
+  <Route path="/" component={Index}>
+    <IndexRoute component={Home} />
+    <Route path="home" component={Home} />
+    <Route path="lab" component={Lab} />
+    <Route path="course" component={Course} />
+    <Route path="project" component={Project} />
+  </Route>
 );
 
 export default RouteConfig

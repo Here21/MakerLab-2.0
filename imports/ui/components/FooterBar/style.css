@@ -20,6 +20,7 @@ footer .inner {
 }
 
 .about hr {
+  border: 1px solid;
   margin: 1rem 0;
   width: 16rem;
 }
