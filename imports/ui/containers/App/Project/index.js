@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
+import ProjectCard from '../../../components/ProjectCard'
 import './style.css';
 
 export default class Project extends Component {
   render() {
     return (
-      <div>
-          hi, this is laboratory
+      <div className="project-page">
+        <div className="inner">
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+        </div>
       </div>
     )
   }
