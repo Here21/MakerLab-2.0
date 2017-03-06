@@ -1,0 +1,9 @@
+.project-page {
+  margin-top: 5rem;
+}
+
+.project-page .inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
