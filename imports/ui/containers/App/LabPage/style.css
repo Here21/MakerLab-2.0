@@ -1,5 +1,6 @@
 .lab-secondary-page {
   margin-top: 4rem;
+  background-color: #D7D7D7;
 }
 
 .lab-page-bg {
@@ -35,4 +36,21 @@
 .lab-page-brief > h3 {
   font-size: 1rem;
   font-style: italic
+}
+
+.lab-secondary-page .bottom-part {
+  margin-top: 10rem;
+  width: 100%;
+  background-color: #FAFAFA;
+}
+
+.lab-secondary-page .inner {
+  margin-top: 15rem;
+}
+
+.inner .project-part-title {
+  width: 20rem;
+  text-align: center;
+  border-bottom: 1px solid #272822;
+  margin: 0 auto;
 }

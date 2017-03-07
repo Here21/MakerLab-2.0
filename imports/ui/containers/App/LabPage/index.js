@@ -15,8 +15,11 @@ export default class LabPage extends Component {
           <img alt="example" width="100%" height="624px" src="https://cloud.githubusercontent.com/assets/1698185/18039916/f025c090-6dd9-11e6-9d86-a4d48a1bf049.png" />
         </div>
         <BusinessCard />
-        <div className="inner">
-          nimenhao
+        <div className="bottom-part">
+          <div className="inner">
+            <h1 className="project-part-title">项目展示</h1>
+            nimenhao
+          </div>
         </div>
       </div>
     )
