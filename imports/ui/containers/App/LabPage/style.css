@@ -1,0 +1,38 @@
+.lab-secondary-page {
+  margin-top: 4rem;
+}
+
+.lab-page-bg {
+  position: relative;
+}
+
+.lab-page-bg .lab-page-brief {
+  width: 730px;
+  height: 300px;
+  border: 1px #FAFAFA;
+  border-style: dashed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.lab-page-brief > h1 {
+  font-size: 3rem;
+}
+
+.lab-page-brief > h2 {
+  font-size: 2rem;
+}
+
+.lab-page-brief > h3 {
+  font-size: 1rem;
+  font-style: italic
+}

@@ -7,6 +7,8 @@ import Lab from '../../../ui/containers/App/Lab'
 import Course from '../../../ui/containers/App/Course'
 import Project from '../../../ui/containers/App/Project'
 
+import LabPage from '../../../ui/containers/App/LabPage/index'
+
 // const chooseComponent = (location, cb) => {
 //   require.ensure([], require => {
 //     cb(null, require('../Component/chooseProducts').default)
@@ -18,6 +20,7 @@ const RouteConfig = (
     <IndexRoute component={Home} />
     <Route path="home" component={Home} />
     <Route path="lab" component={Lab} />
+    <Route path="lab/:labId" component={LabPage} />
     <Route path="course" component={Course} />
     <Route path="project" component={Project} />
   </Route>
