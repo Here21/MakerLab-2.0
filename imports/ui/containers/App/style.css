@@ -17,3 +17,7 @@ a:hover {
   width: 75rem;
   margin: 0 auto;
 }
+
+body {
+  background-image: url("../../../../resources/images/subtle_white_feathers.png");
+}

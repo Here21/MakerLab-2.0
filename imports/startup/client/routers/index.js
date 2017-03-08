@@ -18,7 +18,7 @@ import LabPage from '../../../ui/containers/App/LabPage/index'
 const RouteConfig = (
   <Route path="/" component={Index}>
     <IndexRoute component={Home} />
-    <Route path="home" component={Home} />
+    <Route path="/" component={Home} />
     <Route path="lab" component={Lab} />
     <Route path="lab/:labId" component={LabPage} />
     <Route path="course" component={Course} />
