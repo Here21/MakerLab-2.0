@@ -3,7 +3,7 @@ import { Card } from 'antd'
 import './style.css'
 
 const LabCard = ({ user }) => (
-  <Card style={{ width: 393, height: 420, margin: '6px 0px' }} bodyStyle={{ padding: 0 }}>
+  <Card style={{ width: 392, height: 420, margin: '4px 4px' }} bodyStyle={{ padding: 0 }}>
     <div className="lab-card-image">
       <img alt="example" width="100%" height="208px" src="https://cloud.githubusercontent.com/assets/1698185/18039916/f025c090-6dd9-11e6-9d86-a4d48a1bf049.png" />
     </div>

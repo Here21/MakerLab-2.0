@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link,IndexLink } from 'react-router'
 import './style.css'
 
 const NavBar = ({ pathname }) => (
@@ -10,10 +10,10 @@ const NavBar = ({ pathname }) => (
         登录
       </div>
       <nav id="nav">
-        <Link to="/home" className={pathname === 'home' ? 'active' : ''}>主页</Link>
-        <Link to="/lab" className={pathname === 'lab' ? 'active' : ''}>实验室</Link>
-        <Link to="/course" className={pathname === 'course' ? 'active' : ''}>课程</Link>
-        <Link to="/project" className={pathname === 'project' ? 'active' : ''}>项目</Link>
+        <IndexLink to="/" activeClassName="active" activeStyle={{ color: '#fff' }} >首页</IndexLink>
+        <Link to="/lab" activeClassName="active" activeStyle={{ color: '#fff' }}>实验室</Link>
+        <Link to="/course" activeClassName="active" activeStyle={{ color: '#fff' }}>课程</Link>
+        <Link to="/project" activeClassName="active" activeStyle={{ color: '#fff' }}>项目</Link>
       </nav>
     </div>
   </header>

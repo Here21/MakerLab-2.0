@@ -1,13 +1,12 @@
-.lab-secondary-page {
+.secondary-page {
   margin-top: 4rem;
-  background-color: #D7D7D7;
 }
 
-.lab-page-bg {
+.secondary-page-bg {
   position: relative;
 }
 
-.lab-page-bg .lab-page-brief {
+.secondary-page-bg .secondary-page-brief {
   width: 730px;
   height: 300px;
   border: 1px #FAFAFA;
@@ -25,32 +24,41 @@
   align-items: flex-start;
 }
 
-.lab-page-brief > h1 {
+.secondary-page-brief > h1 {
   font-size: 3rem;
 }
 
-.lab-page-brief > h2 {
+.secondary-page-brief > h2 {
   font-size: 2rem;
 }
 
-.lab-page-brief > h3 {
+.secondary-page-brief > h3 {
   font-size: 1rem;
   font-style: italic
 }
 
-.lab-secondary-page .bottom-part {
+.secondary-page .bottom-part {
   margin-top: 10rem;
   width: 100%;
   background-color: #FAFAFA;
 }
 
-.lab-secondary-page .inner {
+.secondary-page .inner {
   margin-top: 15rem;
 }
 
-.inner .project-part-title {
+.bottom-part .project-part-title {
   width: 20rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
   text-align: center;
   border-bottom: 1px solid #272822;
+  border-top: 1px solid #272822;
   margin: 0 auto;
+}
+
+.bottom-part .bottom-part-container {
+  margin: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
 }

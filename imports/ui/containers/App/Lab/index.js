@@ -13,6 +13,8 @@ export default class Lab extends Component {
           <LabCard />
           <LabCard />
           <LabCard />
+          <LabCard />
+          <LabCard />
         </div>
       </div>
     )
