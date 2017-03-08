@@ -1,11 +1,9 @@
 .lab-card-image {
-  width: 393px;
   height: 208px;
 }
 
 .lab-card-content {
   padding: 16px;
-  width: 393px;
   height: 212px;
   display: flex;
   flex-direction: column;

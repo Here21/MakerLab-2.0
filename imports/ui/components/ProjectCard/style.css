@@ -1,5 +1,4 @@
 .project-card-image {
-  width: 290px;
   height: 210px;
   position: relative;
 }
@@ -16,7 +15,6 @@
 
 .project-card-content {
   padding: 16px;
-  width: 290px;
   height: 130px;
   display: flex;
   flex-direction: column;

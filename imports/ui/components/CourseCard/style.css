@@ -1,5 +1,4 @@
 .course-card-image {
-  width: 596px;
   height: 304px;
   position: relative;
 }
@@ -19,7 +18,6 @@
 
 .course-card-content {
   padding: 16px;
-  width: 596px;
   height: 140px;
   display: flex;
   flex-direction: column;

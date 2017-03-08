@@ -15,6 +15,8 @@ export default class Project extends Component {
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
         </div>
       </div>
     )

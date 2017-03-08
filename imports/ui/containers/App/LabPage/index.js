@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BusinessCard from '../../../components/BusinessCard'
+import ProjectCard from '../../../components/ProjectCard'
 import './style.css';
 
 export default class LabPage extends Component {
@@ -18,7 +19,15 @@ export default class LabPage extends Component {
         <div className="bottom-part">
           <div className="inner">
             <h1 className="project-part-title">项目展示</h1>
-            nimenhao
+            <div className="project-part-content">
+              {
+                [1, 2, 3, 4, 5, 6, 7].map((k) => {
+                  return (
+                    <ProjectCard key={k} />
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </div>

@@ -49,9 +49,19 @@
   margin-top: 15rem;
 }
 
-.inner .project-part-title {
+.bottom-part .project-part-title {
   width: 20rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
   text-align: center;
   border-bottom: 1px solid #272822;
+  border-top: 1px solid #272822;
   margin: 0 auto;
+}
+
+.bottom-part .project-part-content {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
