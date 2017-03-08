@@ -7,7 +7,7 @@ import Lab from '../../../ui/containers/App/Lab'
 import Course from '../../../ui/containers/App/Course'
 import Project from '../../../ui/containers/App/Project'
 
-import LabPage from '../../../ui/containers/App/LabPage/index'
+import SecondaryPage from '../../../ui/containers/App/SecondaryPage'
 
 // const chooseComponent = (location, cb) => {
 //   require.ensure([], require => {
@@ -20,9 +20,11 @@ const RouteConfig = (
     <IndexRoute component={Home} />
     <Route path="/" component={Home} />
     <Route path="lab" component={Lab} />
-    <Route path="lab/:labId" component={LabPage} />
     <Route path="course" component={Course} />
     <Route path="project" component={Project} />
+    <Route path="lab/:labId" component={SecondaryPage} />
+    <Route path="course/:courseId" component={SecondaryPage} />
+    <Route path="project/:projectId" component={SecondaryPage} />
   </Route>
 );
 

@@ -3,6 +3,11 @@
   position: relative;
 }
 
+.project-card-image img {
+  width: 100%;
+  height: 210px;
+}
+
 .project-card-image .project-label {
   position: absolute;
   top: 0;
