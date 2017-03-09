@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Card } from 'antd'
 import LoginForm from '../../../components/LoginForm'
+import Registration from '../../../components/RegistrationForm'
+
 import './style.css';
 
 export default class Login extends Component {
@@ -9,7 +11,7 @@ export default class Login extends Component {
       <div className="login-page">
         <div className="inner">
           <Card bordered={false} className="login-page-card">
-            <LoginForm />
+            <Registration />
           </Card>
         </div>
       </div>
