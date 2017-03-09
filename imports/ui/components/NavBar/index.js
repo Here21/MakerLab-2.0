@@ -6,9 +6,9 @@ const NavBar = ({ pathname }) => (
   <header id="header">
     <div className="inner">
       <Link to="/" className="logo">MakerLab</Link>
-      <div className="login-panel">
+      <Link to="/login" className="login-panel">
         登录
-      </div>
+      </Link>
       <nav id="nav">
         <IndexLink to="/" activeClassName="active" activeStyle={{ color: '#fff' }} >首页</IndexLink>
         <Link to="/lab" activeClassName="active" activeStyle={{ color: '#fff' }}>实验室</Link>
