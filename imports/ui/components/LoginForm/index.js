@@ -5,6 +5,10 @@ import './style.css'
 const FormItem = Form.Item;
 
 class LoginForm extends React.Component {
+  constructor(props, context) {
+    super(props, context)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -13,6 +17,11 @@ class LoginForm extends React.Component {
       }
     });
   }
+
+  handleTurnRegistration() {
+    this.props.turnRegistration()
+  }
+
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
@@ -42,7 +51,7 @@ class LoginForm extends React.Component {
           <Button type="primary" htmlType="submit" className="login-form-button">
             登录
           </Button>
-          Or <a>注册新用户!</a>
+          Or <a onClick={::this.handleTurnRegistration}>注册新用户!</a>
         </FormItem>
       </Form>
     );

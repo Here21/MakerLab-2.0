@@ -12,13 +12,20 @@ export default class Login extends Component {
       loginState: 'login'
     }
   }
+
+  onHandleTransition() {
+    this.setState({
+      loginState: this.state.loginState === 'login' ? 'registration' : 'login'
+    })
+  }
+
   render() {
     return (
       <div className="login-page">
         <div className="inner">
           <Card bordered={false} className="login-page-card">
             {
-              this.state.loginState === 'login' ? <LoginForm /> : <Registration />
+              this.state.loginState === 'login' ? <LoginForm turnRegistration={::this.onHandleTransition} /> : <Registration turnLogin={::this.onHandleTransition} />
             }
           </Card>
         </div>
