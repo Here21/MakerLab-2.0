@@ -25,3 +25,4 @@ webpack:css
 react-meteor-data
 webpack:postcss
 juliancwirko:postcss
+accounts-password
