@@ -26,3 +26,5 @@ react-meteor-data
 webpack:postcss
 juliancwirko:postcss
 accounts-password
+aldeed:collection2
+alanning:roles
