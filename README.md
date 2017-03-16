@@ -1,4 +1,4 @@
-# meteor-react-redux-webpack-boilerplate
+# meteor-react-redux-webpack
 
 ## Contains
 

@@ -5,10 +5,6 @@ import './style.css'
 const FormItem = Form.Item;
 
 class LoginForm extends React.Component {
-  constructor(props, context) {
-    super(props, context)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -25,7 +21,7 @@ class LoginForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <Form onSubmit={this.handleSubmit} className="login-form">
+      <Form onSubmit={::this.handleSubmit} className="login-form">
         <FormItem>
           {getFieldDecorator('userName', {
             rules: [{ required: true, message: '请输入用户名!' }],
