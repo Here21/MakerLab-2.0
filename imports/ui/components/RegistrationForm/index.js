@@ -1,84 +1,64 @@
 import React from 'react'
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button } from 'antd'
+import { Form, Input, Tooltip, Icon, Button, Radio } from 'antd'
 import './style.css'
 
-const FormItem = Form.Item;
-const Option = Select.Option;
+const FormItem = Form.Item
+const RadioButton = Radio.Button;
+const RadioGroup = Radio.Group
 
-const residences = [{
-  value: 'zhejiang',
-  label: 'Zhejiang',
-  children: [{
-    value: 'hangzhou',
-    label: 'Hangzhou',
-    children: [{
-      value: 'xihu',
-      label: 'West Lake',
-    }],
-  }],
-}, {
-  value: 'jiangsu',
-  label: 'Jiangsu',
-  children: [{
-    value: 'nanjing',
-    label: 'Nanjing',
-    children: [{
-      value: 'zhonghuamen',
-      label: 'Zhong Hua Men',
-    }],
-  }],
-}];
 
 class RegistrationForm extends React.Component {
-  state = {
-    confirmDirty: false,
-  };
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      confirmDirty: false,
+      gender: 'Male'
+    }
+  }
+
   handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        console.log('Received values of form: ', values)
       }
-    });
+    })
   }
+
   handleConfirmBlur = (e) => {
-    const value = e.target.value;
-    this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+    const value = e.target.value
+    this.setState({ confirmDirty: this.state.confirmDirty || !!value })
   }
+
   checkPassword = (rule, value, callback) => {
-    const form = this.props.form;
+    const form = this.props.form
     if (value && value !== form.getFieldValue('password')) {
-      callback('Two passwords that you enter is inconsistent!');
+      callback('Two passwords that you enter is inconsistent!')
     } else {
-      callback();
+      callback()
     }
   }
+
   checkConfirm = (rule, value, callback) => {
-    const form = this.props.form;
+    const form = this.props.form
     if (value && this.state.confirmDirty) {
-      form.validateFields(['confirm'], { force: true });
+      form.validateFields(['confirm'], { force: true })
     }
-    callback();
+    callback()
   }
+
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator } = this.props.form
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
-    };
+    }
     const tailFormItemLayout = {
       wrapperCol: {
         span: 14,
         offset: 6,
       },
-    };
-    const prefixSelector = getFieldDecorator('prefix', {
-      initialValue: '86',
-    })(
-      <Select className="icp-selector">
-        <Option value="86">+86</Option>
-      </Select>
-    );
+    }
     return (
       <Form onSubmit={this.handleSubmit}>
         <FormItem
@@ -94,6 +74,22 @@ class RegistrationForm extends React.Component {
             }],
           })(
             <Input />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Radio.Button"
+          hasFeedback
+        >
+          {getFieldDecorator('gender', {
+            rules: [{
+              required: true, message: 'Please chose your gender!',
+            }],
+          })(
+            <RadioGroup defaultValue="Male">
+              <RadioButton value="Male">Male</RadioButton>
+              <RadioButton value="Female">Female</RadioButton>
+            </RadioGroup>
           )}
         </FormItem>
         <FormItem
@@ -130,7 +126,7 @@ class RegistrationForm extends React.Component {
           {...formItemLayout}
           label={(
             <span>
-              Nickname&nbsp;
+              Nickname&nbsp
               <Tooltip title="What do you want other to call you?">
                 <Icon type="question-circle-o" />
               </Tooltip>
@@ -144,22 +140,11 @@ class RegistrationForm extends React.Component {
             <Input />
           )}
         </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label="Habitual Residence"
-        >
-          {getFieldDecorator('residence', {
-            initialValue: ['zhejiang', 'hangzhou', 'xihu'],
-            rules: [{ type: 'array', required: true, message: 'Please select your habitual residence!' }],
-          })(
-            <Cascader options={residences} />
-          )}
-        </FormItem>
         <FormItem {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit" size="large">Register</Button>
         </FormItem>
       </Form>
-    );
+    )
   }
 }
 
