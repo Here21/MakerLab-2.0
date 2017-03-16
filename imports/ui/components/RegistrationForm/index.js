@@ -81,16 +81,10 @@ class RegistrationForm extends React.Component {
           label="Radio.Button"
           hasFeedback
         >
-          {getFieldDecorator('gender', {
-            rules: [{
-              required: true, message: 'Please chose your gender!',
-            }],
-          })(
-            <RadioGroup defaultValue="Male">
-              <RadioButton value="Male">Male</RadioButton>
-              <RadioButton value="Female">Female</RadioButton>
-            </RadioGroup>
-          )}
+          <RadioGroup defaultValue="Male">
+            <RadioButton value="Male">Male</RadioButton>
+            <RadioButton value="Female">Female</RadioButton>
+          </RadioGroup>
         </FormItem>
         <FormItem
           {...formItemLayout}
