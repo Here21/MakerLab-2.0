@@ -21,6 +21,7 @@ class RegistrationForm extends React.Component {
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values)
+        this.props.registration(values)
       }
     })
   }
@@ -63,14 +64,14 @@ class RegistrationForm extends React.Component {
       <Form onSubmit={this.handleSubmit}>
         <FormItem
           {...formItemLayout}
-          label="E-mail"
+          label="邮箱"
           hasFeedback
         >
           {getFieldDecorator('email', {
             rules: [{
-              type: 'email', message: 'The input is not valid E-mail!',
+              type: 'email', message: '输入的电子邮箱无效!',
             }, {
-              required: true, message: 'Please input your E-mail!',
+              required: true, message: '请输入您的电子邮箱！',
             }],
           })(
             <Input />
@@ -78,28 +79,29 @@ class RegistrationForm extends React.Component {
         </FormItem>
         <FormItem
           {...formItemLayout}
-          label="Radio.Button"
+          label="性别"
           hasFeedback
         >
           {getFieldDecorator('gender', {
             rules: [{
-              required: true, message: 'Please chose your gender!',
-            }],
+              required: true, message: '请输入密码!'
+            }]
           })(
-            <RadioGroup defaultValue="Male">
-              <RadioButton value="Male">Male</RadioButton>
-              <RadioButton value="Female">Female</RadioButton>
+            <RadioGroup>
+              <RadioButton value="Male">男</RadioButton>
+              <RadioButton value="Unknown">不确定？</RadioButton>
+              <RadioButton value="Female">女</RadioButton>
             </RadioGroup>
           )}
         </FormItem>
         <FormItem
           {...formItemLayout}
-          label="Password"
+          label="密码"
           hasFeedback
         >
           {getFieldDecorator('password', {
             rules: [{
-              required: true, message: 'Please input your password!',
+              required: true, message: '请输入密码!',
             }, {
               validator: this.checkConfirm,
             }],
@@ -109,12 +111,12 @@ class RegistrationForm extends React.Component {
         </FormItem>
         <FormItem
           {...formItemLayout}
-          label="Confirm Password"
+          label="确认密码"
           hasFeedback
         >
           {getFieldDecorator('confirm', {
             rules: [{
-              required: true, message: 'Please confirm your password!',
+              required: true, message: '请确认您的密码!',
             }, {
               validator: this.checkPassword,
             }],
@@ -126,16 +128,16 @@ class RegistrationForm extends React.Component {
           {...formItemLayout}
           label={(
             <span>
-              Nickname&nbsp
-              <Tooltip title="What do you want other to call you?">
+              Nickname
+              <Tooltip title="你希望别人怎么称呼您?">
                 <Icon type="question-circle-o" />
               </Tooltip>
             </span>
           )}
           hasFeedback
         >
-          {getFieldDecorator('nickname', {
-            rules: [{ required: true, message: 'Please input your nickname!' }],
+          {getFieldDecorator('nickName', {
+            rules: [{ required: true, message: '请输入您的名字!' }],
           })(
             <Input />
           )}
@@ -146,6 +148,11 @@ class RegistrationForm extends React.Component {
       </Form>
     )
   }
+}
+
+RegistrationForm.contextTypes = {
+  turnLogin: React.PropTypes.string,
+  registration: React.PropTypes.func
 }
 
 const WrappedRegistrationForm = Form.create()(RegistrationForm)

@@ -1,5 +1,9 @@
-import { Meteor } from 'meteor/meteor';
+// import moment from 'moment-timezone'
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+
+import methods from './methods'
+
+// moment.tz.setDefault('Asia/Shanghai')
+
+
+methods()
