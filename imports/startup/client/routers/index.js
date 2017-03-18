@@ -10,6 +10,10 @@ import Login from '../../../ui/containers/App/Login'
 import SecondaryPage from '../../../ui/containers/App/SecondaryPage'
 
 import Dashboard from '../../../ui/containers/Dashboard'
+import Me from '../../../ui/containers/Dashboard/Me'
+import MyLab from '../../../ui/containers/Dashboard/MyLab'
+
+
 
 // const chooseComponent = (location, cb) => {
 //   require.ensure([], require => {
@@ -33,11 +37,9 @@ export const baseRoute = (
 
 export const dashboardRoute = (
   <Route path="/dashboard" component={Dashboard}>
-    <IndexRoute component={Home} />
-    <Route path="lab" component={Lab} />
-    <Route path="course" component={Course} />
-    <Route path="project" component={Project} />
-    <Route path="login" component={Login} />
+    <IndexRoute component={Me} />
+    <Route path="me" component={Me} />
+    <Route path="mylab" component={MyLab} />
   </Route>
 )
 
