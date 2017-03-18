@@ -30,23 +30,23 @@ export default class AsideCollapse extends Component {
           <Menu mode="inline" theme="dark" defaultSelectedKeys={['user']}>
             <Menu.Item key="user">
               <Icon type="user" />
-              {!collapse && <span className="nav-text">Navigation 1</span>}
+              {!collapse && <span className="nav-text">个人中心</span>}
             </Menu.Item>
             <Menu.Item key="setting">
               <Icon type="setting" />
-              {!collapse && <span className="nav-text">Navigation 2</span>}
+              {!collapse && <span className="nav-text">设置</span>}
             </Menu.Item>
             <Menu.Item key="laptop">
               <Icon type="laptop" />
-              {!collapse && <span className="nav-text">Navigation 3</span>}
+              {!collapse && <span className="nav-text">实验室</span>}
             </Menu.Item>
-            <Menu.Item key="notification">
-              <Icon type="notification" />
-              {!collapse && <span className="nav-text">Navigation 4</span>}
+            <Menu.Item key="appstore-o">
+              <Icon type="appstore-o" />
+              {!collapse && <span className="nav-text">课程</span>}
             </Menu.Item>
             <Menu.Item key="folder">
               <Icon type="folder" />
-              {!collapse && <span className="nav-text">Navigation 5</span>}
+              {!collapse && <span className="nav-text">文件</span>}
             </Menu.Item>
           </Menu>
           <div className="aside-action" onClick={::this.onCollapseChange}>
