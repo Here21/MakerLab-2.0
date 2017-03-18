@@ -49,24 +49,16 @@ export default class AsideCollapse extends Component {
               {!collapse && <span className="nav-text">Navigation 5</span>}
             </Menu.Item>
           </Menu>
-          <div className="aside-action" onClick={this.onCollapseChange}>
+          <div className="aside-action" onClick={::this.onCollapseChange}>
             {collapse ? <Icon type="right" /> : <Icon type="left" />}
           </div>
         </aside>
         <div className="layout-main">
-          <div className="layout-header" />
-          <div className="layout-container">
-            <Breadcrumb>
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>App list</Breadcrumb.Item>
-              <Breadcrumb.Item>Any app</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="layout-content">
-              <div style={{ height: 220 }}>
-                {
-                  this.props.children
-                }
-              </div>
+          <div className="layout-content">
+            <div style={{ height: 220 }}>
+              {
+                this.props.children
+              }
             </div>
           </div>
           <div className="layout-footer">
