@@ -67,6 +67,7 @@ export default class Login extends Component {
             }
           </Card>
         </div>
+        { this.props.children }
       </div>
     )
   }

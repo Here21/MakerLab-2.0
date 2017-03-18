@@ -6,7 +6,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import routers from '../imports/startup/client/routers'
+import { baseRoute, dashboardRoute } from '../imports/startup/client/routers'
 import configure from '../imports/startup/client/store'
 import sagas from '../imports/startup/client/sagas/index'
 // import '../imports/startup/accounts-config.js';
@@ -16,11 +16,15 @@ const history = syncHistoryWithStore(browserHistory, store)
 store.runSaga(sagas)
 
 Meteor.startup(() => {
+  console.log(dashboardRoute)
   render(
     <Provider store={store}>
       <Router history={history}>
         {
-          routers
+          baseRoute
+        }
+        {
+          dashboardRoute
         }
       </Router>
     </Provider>,
