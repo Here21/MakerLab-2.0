@@ -5,11 +5,19 @@ import './style.css'
 const FormItem = Form.Item;
 
 class LoginForm extends React.Component {
+  // constructor(props, context) {
+  //   super(props, context)
+  //   this.state = {
+  //
+  //   }
+  // }
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        this.props.login(values)
       }
     });
   }
@@ -23,8 +31,12 @@ class LoginForm extends React.Component {
     return (
       <Form onSubmit={::this.handleSubmit} className="login-form">
         <FormItem>
-          {getFieldDecorator('userName', {
-            rules: [{ required: true, message: '请输入用户名!' }],
+          {getFieldDecorator('email', {
+            rules: [{
+              type: 'email', message: '输入的电子邮箱无效!',
+            }, {
+              required: true, message: '请输入用户名!'
+            }]
           })(
             <Input addonBefore={<Icon type="user" />} placeholder="用户名" />
           )}
@@ -52,6 +64,11 @@ class LoginForm extends React.Component {
       </Form>
     );
   }
+}
+
+LoginForm.contenxTypes = {
+  turnRegistration: React.PropTypes.string,
+  login: React.PropTypes.func
 }
 
 const WrappedLoginForm = Form.create()(LoginForm);

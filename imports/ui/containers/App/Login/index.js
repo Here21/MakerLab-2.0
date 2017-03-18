@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card } from 'antd'
 import { Meteor } from 'meteor/meteor'
+import { Accounts } from 'meteor/accounts-base'
 import LoginForm from '../../../components/LoginForm'
 import Registration from '../../../components/RegistrationForm'
 
@@ -14,8 +15,11 @@ export default class Login extends Component {
     }
   }
 
-  onHandleLogin() {
-
+  onHandleLogin(value) {
+    console.log(value)
+    Meteor.loginWithPassword(value.email, value.password, (error) => {
+      if (error) console.log(error)
+    })
   }
 
   onHandleRegistration(values) {
@@ -28,10 +32,14 @@ export default class Login extends Component {
       }
     }
     console.log(userInfo)
-    Meteor.call('user.create', userInfo, (err, res) => {
-      console.log(err)
-      console.log(res)
+    Accounts.createUser(userInfo, (error) => {
+      console.log(error)
     })
+    // console.log(feedback)
+    // Meteor.call('user.create', userInfo, (err, res) => {
+    //   console.log(err)
+    //   console.log(res)
+    // })
   }
 
   onHandleTransition() {
@@ -49,6 +57,7 @@ export default class Login extends Component {
               this.state.loginState === 'login' ?
                 <LoginForm
                   turnRegistration={::this.onHandleTransition}
+                  login={::this.onHandleLogin}
                 />
                 :
                 <Registration
@@ -58,6 +67,7 @@ export default class Login extends Component {
             }
           </Card>
         </div>
+        { this.props.children }
       </div>
     )
   }
