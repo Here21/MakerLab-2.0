@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import { bindActionCreators } from 'redux'
-// import { connect } from 'react-redux'
-import { Menu, Breadcrumb, Icon } from 'antd'
+import { Layout, Menu, Icon } from 'antd'
 import './style.css'
 
-const SubMenu = Menu.SubMenu;
+const { Header, Sider, Content } = Layout
+
 
 export default class AsideCollapse extends Component {
   constructor(props, context) {
@@ -15,57 +14,49 @@ export default class AsideCollapse extends Component {
     }
   }
 
-  onCollapseChange() {
+  toggle() {
     this.setState({
-      collapse: !this.state.collapse,
+      collapsed: !this.state.collapsed,
     })
   }
 
   render() {
-    const collapse = this.state.collapse;
     return (
-      <div className={collapse ? 'layout-aside layout-aside-collapse' : 'layout-aside'}>
-        <aside className="layout-sider">
-          <div className="layout-logo" />
-          <Menu mode="inline" theme="dark" defaultSelectedKeys={['user']}>
-            <Menu.Item key="user">
+      <Layout>
+        <Sider
+          trigger={null}
+          collapsible
+          collapsed={this.state.collapsed}
+        >
+          <div className="logo" />
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+            <Menu.Item key="1">
               <Icon type="user" />
-              {!collapse && <span className="nav-text">个人中心</span>}
+              <span className="nav-text">nav 1</span>
             </Menu.Item>
-            <Menu.Item key="setting">
-              <Icon type="setting" />
-              {!collapse && <span className="nav-text">设置</span>}
+            <Menu.Item key="2">
+              <Icon type="video-camera" />
+              <span className="nav-text">nav 2</span>
             </Menu.Item>
-            <Menu.Item key="laptop">
-              <Icon type="laptop" />
-              {!collapse && <span className="nav-text">实验室</span>}
-            </Menu.Item>
-            <Menu.Item key="appstore-o">
-              <Icon type="appstore-o" />
-              {!collapse && <span className="nav-text">课程</span>}
-            </Menu.Item>
-            <Menu.Item key="folder">
-              <Icon type="folder" />
-              {!collapse && <span className="nav-text">文件</span>}
+            <Menu.Item key="3">
+              <Icon type="upload" />
+              <span className="nav-text">nav 3</span>
             </Menu.Item>
           </Menu>
-          <div className="aside-action" onClick={::this.onCollapseChange}>
-            {collapse ? <Icon type="right" /> : <Icon type="left" />}
-          </div>
-        </aside>
-        <div className="layout-main">
-          <div className="layout-content">
-            <div style={{ height: 220 }}>
-              {
-                this.props.children
-              }
-            </div>
-          </div>
-          <div className="layout-footer">
-            Ant Design all rights reserved © 2015 Created by Ant UED
-          </div>
-        </div>
-      </div>
+        </Sider>
+        <Layout>
+          <Header style={{ background: '#fff', padding: 0 }}>
+            <Icon
+              className="trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={::this.toggle}
+            />
+          </Header>
+          <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+            Content
+          </Content>
+        </Layout>
+      </Layout>
     );
   }
 }
