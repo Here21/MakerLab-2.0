@@ -22,7 +22,7 @@ export default class AsideCollapse extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout className="dashboard">
         <Sider
           trigger={null}
           collapsible
