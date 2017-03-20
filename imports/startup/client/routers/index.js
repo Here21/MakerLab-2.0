@@ -38,8 +38,8 @@ export const baseRoute = (
 export const dashboardRoute = (
   <Route path="/dashboard" component={Dashboard}>
     <IndexRoute component={Me} />
-    <Route path="me" component={Me} />
-    <Route path="mylab" component={MyLab} />
+    <Route path="/dashboard/me" component={Me} />
+    <Route path="/dashboard/lab" component={MyLab} />
   </Route>
 )
 
