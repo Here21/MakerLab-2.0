@@ -12,7 +12,7 @@ import SecondaryPage from '../../../ui/containers/App/SecondaryPage'
 import Dashboard from '../../../ui/containers/Dashboard'
 import Me from '../../../ui/containers/Dashboard/Me'
 import MyLab from '../../../ui/containers/Dashboard/MyLab'
-
+import MyCourse from '../../../ui/containers/Dashboard/MyCourse'
 
 
 // const chooseComponent = (location, cb) => {
@@ -25,13 +25,13 @@ export const baseRoute = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="/" component={Home} />
-    <Route path="lab" component={Lab} />
-    <Route path="course" component={Course} />
-    <Route path="project" component={Project} />
-    <Route path="login" component={Login} />
-    <Route path="lab/:labId" component={SecondaryPage} />
-    <Route path="course/:courseId" component={SecondaryPage} />
-    <Route path="project/:projectId" component={SecondaryPage} />
+    <Route path="/lab" component={Lab} />
+    <Route path="/course" component={Course} />
+    <Route path="/project" component={Project} />
+    <Route path="/login" component={Login} />
+    <Route path="/lab/:labId" component={SecondaryPage} />
+    <Route path="/course/:courseId" component={SecondaryPage} />
+    <Route path="/project/:projectId" component={SecondaryPage} />
   </Route>
 )
 
@@ -40,6 +40,7 @@ export const dashboardRoute = (
     <IndexRoute component={Me} />
     <Route path="/dashboard/me" component={Me} />
     <Route path="/dashboard/lab" component={MyLab} />
+    <Route path="/dashboard/course" component={MyCourse} />
   </Route>
 )
 
