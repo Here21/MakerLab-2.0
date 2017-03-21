@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BusinessCard from '../../../components/BusinessCard'
 import ProjectCard from '../../../components/ProjectCard'
 import CourseCard from '../../../components/CourseCard'
-import './style.css';
+import './style.css'
 
 export default class SecondaryPage extends Component {
   render() {

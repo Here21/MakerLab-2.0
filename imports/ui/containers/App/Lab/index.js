@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LabCard from '../../../components/LabCard'
-import './style.css';
+import './style.css'
 
 export default class Lab extends Component {
   render() {

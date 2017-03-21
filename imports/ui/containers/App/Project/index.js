@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ProjectCard from '../../../components/ProjectCard'
-import './style.css';
+import './style.css'
 
 export default class Project extends Component {
   render() {

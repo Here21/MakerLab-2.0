@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { SectionsContainer, Section } from 'react-fullpage'
-import './style.css';
+import './style.css'
 
 export default class Home extends Component {
   render() {
