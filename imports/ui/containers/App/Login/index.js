@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { browserHistory } from 'react-router'
 import { Card } from 'antd'
 import { Meteor } from 'meteor/meteor'
 import { Accounts } from 'meteor/accounts-base'
@@ -18,7 +19,13 @@ export default class Login extends Component {
   onHandleLogin(value) {
     console.log(value)
     Meteor.loginWithPassword(value.email, value.password, (error) => {
-      if (error) console.log(error)
+      if (error) {
+        console.log(error)
+        // TODO: 使用提示组件提示错误
+        return
+      }
+      // TODO: 使用提示组件提示登录成功，并设置setTimeOut
+      browserHistory.push('/dashboard')
     })
   }
 
@@ -31,15 +38,14 @@ export default class Login extends Component {
         gender: values.gender
       }
     }
-    console.log(userInfo)
     Accounts.createUser(userInfo, (error) => {
-      console.log(error)
+      if (error) {
+        console.log(error)
+        return
+      }
+      // TODO: 使用提示组件提示登录成功，并设置setTimeOut
+      browserHistory.push('/dashboard')
     })
-    // console.log(feedback)
-    // Meteor.call('user.create', userInfo, (err, res) => {
-    //   console.log(err)
-    //   console.log(res)
-    // })
   }
 
   onHandleTransition() {
