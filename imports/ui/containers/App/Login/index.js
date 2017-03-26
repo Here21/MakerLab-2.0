@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { browserHistory, Redirect } from 'react-router'
+import { browserHistory } from 'react-router'
 import { Card } from 'antd'
 import { Meteor } from 'meteor/meteor'
 import { Accounts } from 'meteor/accounts-base'
