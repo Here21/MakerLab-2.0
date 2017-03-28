@@ -12,27 +12,13 @@ export default class Home extends Component {
       navigation: true,
       verticalAlign: false,
       sectionPaddingTop: '0',
-      sectionPaddingBottom: '0',
-      arrowNavigation: true,
-      controlArrows: true,
-      verticalCentered: true,
-      paddingTop: '3em',
-      paddingBottom: '10px',
-      fixedElements: '#header, .footer',
-      responsiveWidth: 0,
-      responsiveHeight: 0,
-      responsiveSlides: false,
-      parallax: false,
-      parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
-
+      sectionPaddingBottom: '0'
     }
 
     return (
-      <SectionsContainer {...options}>
-        <Section className="Test">Page 1</Section>
-        <Section>Page 2</Section>
-        <Section>Page 3</Section>
-      </SectionsContainer>
+      <div>
+        123
+      </div>
     )
   }
 }
